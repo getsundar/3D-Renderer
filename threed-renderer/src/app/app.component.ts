@@ -30,16 +30,19 @@ export class AppComponent {
   }
   ngOnInit(): void {
     const popupEl: NgElement & WithProperties < RendererComponentComponent > = document.createElement('app-renderer-component') as any;
+    
     // seat
+
+    popupEl.modelPath = '../assets/models/Seat/scene.gltf';
+    popupEl.rendererWidth = 500;
+    popupEl.rendererHeight = 500;
     popupEl.showAxishelper = false;
     popupEl.axisHelperSize = 50;
     popupEl.cameraPosition = [-100, 30, 60];
     popupEl.controlsPosition = [0, 30, 0];
-    popupEl.rendererWidth = 500;
-    popupEl.rendererHeight = 500;
-    popupEl.modelPath = '../assets/models/Seat/scene.gltf';
 
-    //aircraft
+    // aircraft
+
     // popupEl.showAxishelper = false;
     // popupEl.axisHelperSize = 10000;
     // popupEl.cameraPosition = [0, 4000, 45000];
@@ -47,6 +50,8 @@ export class AppComponent {
     // popupEl.rendererWidth = 1000;
     // popupEl.rendererHeight = 600;
     // popupEl.modelPath = '../assets/models/A320/scene.gltf';
+
+
     document.body.appendChild(popupEl);
   }
 }
